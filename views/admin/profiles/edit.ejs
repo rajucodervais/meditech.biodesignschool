@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+<%- include('../partials/topnav') %>
+<div id="layoutSidenav">
+    <%- include('../partials/sidenav') %>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <div class="app-title">
+                    <div>
+                        <h1><i class="fa fa-user"></i> Admin > edit</h1>
+                    </div>
+                    <ul class="app-breadcrumb breadcrumb">
+                        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                        <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="msg">
+                            <% if (typeof Msg != 'undefined' && Msg) { %>
+                                <div class="alert alert-success"><%- Msg %></div>
+                            <% } else if(typeof ErrorMsg != 'undefined' && ErrorMsg) { %>
+                                <div class="alert alert-danger"><%- ErrorMsg %></div>
+                            <% } %>
+                        </div>
+                        <form method="POST" action="/admin/update">
+                            <input type="hidden" name="id" value="<%= result[0].id%>">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="FirstName">First Name</label>
+                                        <input required  class="form-control py-4" name="first_name" id="FirstName" type="text"
+                                            placeholder="Enter first name" value="<%= result[0].first_name%>" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="LastName">Last Name</label>
+                                        <input required  class="form-control py-4" id="LastName" type="text" name="last_name"
+                                            placeholder="Enter last name" value="<%= result[0].last_name%>"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <label class="small mb-1" for="email">Email</label>
+                                <input required  class="form-control py-4" id="email" name="email" type="email"
+                                    aria-describedby="emailHelp" placeholder="Enter email address" value="<%= result[0].email%>"/>
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 mb-0">
+                                <button class="btn btn-primary" type="submit">Update Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<%- include('../partials/footer') %>

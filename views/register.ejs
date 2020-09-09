@@ -1,0 +1,559 @@
+<%- include('partials/header'); %>
+<%- include('partials/register-nav'); %>
+<!-- ======= background slider Section ======= -->
+
+<main id="main" style="margin-top: 140px;">
+  <div class="container mt-4" data-aos="fade-up">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <ul class="nav nav-pills" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#basic_info" role="tab"
+                  aria-controls="home" aria-selected="true">Basic Informations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="academin-tab" data-toggle="tab" href="#academic" role="tab"
+                  aria-controls="academic" aria-selected="false">Academic Qualification</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="upload-tab" data-toggle="tab" href="#upload" role="tab" aria-controls="upload"
+                  aria-selected="false">Upload Documents</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="declaration-tab" data-toggle="tab" href="#declaration" role="tab"
+                  aria-controls="declaration" aria-selected="false">Declaration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+                  aria-selected="false">Review & Print</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="basic_info" role="tabpanel" aria-labelledby="basic-tab">
+                <form action="" method="POST">
+                  <h6 class="text-danger">Basic Informations</h6>
+                  <hr class="text-danger">
+                  <div class="form-inline">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="">Name <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-2">
+                        <select name="sir_name" class="form-control" id="sir_name">
+                          <option value=""></option>
+                          <option value="Mr">Mr.</option>
+                          <option value="Ms">Ms.</option>
+                          <option value="Dr">Dr.</option>
+                          <option value="Mx">Mx.</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="first_name" placeholder="first" name="first_name">
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="middle_name" placeholder="middle"
+                          name="middle_name">
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="last_name" placeholder="last" name="last_name">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="form-inline">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="">Father's Name <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-2">
+                        <select name="father_sir_name" class="form-control" id="father_sir_name">
+                          <option value=""></option>
+                          <option value="Mr">Mr.</option>
+                          <option value="Ms">Ms.</option>
+                          <option value="Dr">Dr.</option>
+                          <option value="Mx">Mx.</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="father_first_name" placeholder="first"
+                          name="father_first_name">
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="father_middle_name" placeholder="middle"
+                          name="father_middle_name">
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="father_last_name" placeholder="last"
+                          name="father_last_name">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="form-inline">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="">Mother's Name <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-2">
+                        <select name="sir_name" class="form-control" id="sir_name">
+                          <option value=""></option>
+                          <option value="Mr">Mr.</option>
+                          <option value="Ms">Ms.</option>
+                          <option value="Mrs">Mrs.</option>
+                          <option value="Dr">Dr.</option>
+                          <option value="Mx">Mx.</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="mother_first_name" placeholder="first"
+                          name="mother_first_name">
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="mother_middle_name" placeholder="middle"
+                          name="mother_middle_name">
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="mother_last_name" placeholder="last"
+                          name="mother_last_name">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">Date Of Birth <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" readonly name="dob" id="dob" class="form-control"
+                          placeholder="date of birth">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Gender <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <select name="gender" class="form-control" id="gender">
+                          <option value=""></option>
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
+                          <option value="3">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <h6 class="text-danger">Permanent Address</h6>
+                  <hr class="text-danger">
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <label for="">House No./Apartment Name/Block No <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-8 col-md-8">
+                        <input type="text" name="houseno" id="houseno" class="form-control"
+                          placeholder="House No./Apartment Name/Block No">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">Road/ Street/ Lane</label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="street" id="street" class="form-control" placeholder="date of birth">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Area/Landmark<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="landmark" id="landmark" class="form-control"
+                          placeholder="Area/Landmark">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">country<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="country" id="country" class="form-control" placeholder="Country">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">State<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="state" id="state" class="form-control" placeholder="State">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">City<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="city" id="city" class="form-control" placeholder="City">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Pincode<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="pincode" id="pincode" class="form-control" placeholder="pincode">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row bg-info">
+                      <div class="col-sm-12">
+                        <label class="radio-inline text-white">
+                          Are the Permanent and Present Address same?<span class="text-danger">*</span>
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" value="1" id="yes_same" name="radio"> Yes
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" value="0" id="no_same" name="radio"> no
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <h6 class="text-danger">Current Address</h6>
+                  <hr class="text-danger">
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <label for="">House No./Apartment Name/Block No <span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-8 col-md-8">
+                        <input type="text" name="current_houseno" id="current_houseno" class="form-control"
+                          placeholder="House No./Apartment Name/Block No">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">Road/ Street/ Lane</label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="current_street" id="current_street" class="form-control"
+                          placeholder="date of birth">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Area/Landmark<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="current_landmark" id="current_landmark" class="form-control"
+                          placeholder="Area/Landmark">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">country<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="current_country" id="current_country" class="form-control"
+                          placeholder="Country">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">State<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="current_state" id="current_state" class="form-control"
+                          placeholder="State">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">City<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="current_city" id="current_city" class="form-control"
+                          placeholder="City">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Pincode<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="current_pincode" id="current_pincode" class="form-control"
+                          placeholder="pincode">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <hr>
+                  <h6 class="text-danger">Contact Details</h6>
+                  <hr>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">Email Id<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email Id">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Alternate Email Id</label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="email" name="alternate_email" id="alternate_email" class="form-control"
+                          placeholder="Email Id">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <div class="row">
+                      <div class="col-md-2 col-sm-2">
+                        <label for="">Mobile number<span class="text-danger">*</span> </label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="mobile" id="mobile" class="form-control" placeholder="mobile number">
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                        <label for="">Alternate Mobile</label>
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                        <input type="text" name="alternate_mobile" id="alternate_mobile" class="form-control"
+                          placeholder="alternate mobile number">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <input type="button" value="Save & Continue" class="btn btn-primary">
+                  </div>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="academic" role="tabpanel" aria-labelledby="academic-tab">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-12" id="add-qualification-row">
+                        <div id="main-row-1">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Course Name</label>
+                            </div>
+                            <div class="col-md-8">
+                              <input type="text" readonly value="10th" class="form-control" name="course_name[]"
+                                id="course_name_1">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Roll No</label>
+                            </div>
+                            <div class="col-md-8">
+                              <input type="text" value="" name="roll_no[]" class="form-control" id="roll_no_1">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Board of Education</label>
+                            </div>
+                            <div class="col-md-8">
+                              <input type="text" value="" name="board_of_education[]" id="board_of_education_1"
+                                class="form-control">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Institute</label>
+                            </div>
+                            <div class="col-md-8">
+                              <input type="text" value="" name="institute[]" id="institute_1" class="form-control">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Duration</label>
+                            </div>
+                            <div class="col-md-8">
+                              <span>From:</span><input type="text" name="duration_from[]" id="duration_from_1">
+                              <span>To:</span><input type="text" name="duration_to[]" id="duration_to_1">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Specialization</label>
+                            </div>
+                            <div class="col-md-8">
+                              <input type="text" value="" name="specialization[]" id="specialization_1"
+                                class="form-control">
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Course Type</label>
+                            </div>
+                            <div class="col-md-8">
+                              <input type="radio" value="" name="course_type[]" class="course_type_full_1">Full Time
+                              <input type="radio" value="" name="course_type[]" class="course_type_part_1">Part Time
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="">Grading Type</label>
+                            </div>
+                            <div class="col-md-4">
+                              <input type="radio" name="grading_type[]" class="grading_type_mark_1">Mark &nbsp;
+                              <input type="radio" name="grading_type[]" class="grading_type_sgpa_1">SGPA
+                            </div>
+                            <div class="col-md-4">
+                              <div class="">
+                                obtained Mark: <input type="text" value="" name="obtained_mark[]" id="obtained_mark_1">
+                              </div>
+                              <br>
+                              <div class="">
+                                Maximum Mark: <input type="text" value="" name="maximum_mark[]" id="maximum_mark_1">
+                              </div>
+                              <br>
+                              <div class="" id="percent_input">
+                                Percentage: <input type="text" readonly value="" name="percentage[]" id="percentage_1">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <br>
+                      </div>
+                    </div>
+                    <br>
+                    <div align="right">
+                      <button type="button" name="add" id="add" class="btn btn-success btn-xs">Add Row</button>
+                    </div>
+                    <div align="center">
+                      <button type="button" name="save" id="save" class="btn btn-info">Save &Continue</button>
+                    </div>
+                    <br />
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="upload" role="tabpanel" aria-labelledby="contact-tab">
+                <form>
+                  <p class="text-danger">
+                  Note:  Upload your Academic Related All Documents & resume Also *
+                  </p>
+                  <div id="upload-main-row">
+                    <div class="row upload-row" id="upload_row_1">
+                      <div class="col">
+                        <input type="text" class="form-control" name="file_name[]" id="file_name_1" placeholder="file name">
+                      </div>
+                      <div class="col">
+                        <input type="file" class="form-control" id="file_1" name="file[]">
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+                  <br>
+                  <div align="right">
+                    <button type="button" name="upload_add" id="upload_add" class="btn btn-success btn-xs">Add Row</button>
+                  </div>
+                  <div align="center">
+                    <button type="button" name="save" id="save" class="btn btn-info">Save & Continue</button>
+                  </div>
+                  <br />
+                </form>
+
+              </div>
+              <div class="tab-pane fade" id="declaration" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p><strong>Declaration</strong>hereby declare that the information given above and in the enclosed documents is true to the
+                      best of my knowledge and belief and nothing has been concealed therein. I am well aware of the fact that if
+                      the Information given by me is proved false/not true, I will have to face the punishment as per the law. Also,
+                      all the benefits availed by me shall be summarily withdrawn.</p>
+                      <br>
+                      <input type="checkbox"> All Terms & conditions Accepted!
+                    </div>
+                </div>
+                <div align="center">
+                  <button type="button" name="save" id="save" class="btn btn-success">Submit Now</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="contact-tab"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main><!-- End #main -->
+<style>
+  .nav-item {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+
+  #basic_info input[type=text] {
+    width: 100%;
+  }
+</style>
+
+<%- include('partials/footer-top'); %>
+<%- include('partials/footer'); %>
+<script>
+  var count = 1;
+  $(document).ready(function () {
+    $('#add').click(function () {
+      count = count + 1;
+      var html_code = '<div id="main-row-' + count + '">';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Course Name</label></div><div class="col-md-8"><input type="text" value="10th" class="form-control" name="course_name[]" id="course_name_' + count + '"> </div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Roll No</label></div><div class="col-md-8"><input type="text" value="" name="roll_no[]" class="form-control" id="roll_no_' + count + '"></div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Board of Education</label></div><div class="col-md-8"><input type="text" value="" name="board_of_education[]" id="board_of_education_' + count + '" class="form-control"></div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Institute</label></div><div class="col-md-8"><input type="text" value="" name="institute[]" id="institute_' + count + '" class="form-control"></div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Duration</label></div><div class="col-md-8"><span>From:</span><input type="text" name="duration_from[]" id="duration_from_' + count + '"><span>To:</span><input type="text" name="duration_to[]" id="duration_to_' + count + '"></div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Specialization</label></div><div class="col-md-8"><input type="text" value="" name="specialization[]" id="specialization_' + count + '" class="form-control"></div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Course Type</label></div><div class="col-md-8"><input type="radio" value="" name="course_type[]" class="course_type_full_' + count + '">Full Time<input type="radio" value="" name="course_type[]" class="course_type_part_' + count + '">Part Time</div></div><br>';
+      html_code += '<div class="row"><div class="col-md-4"><label for="">Grading Type</label></div><div class="col-md-4"><input type="radio" name="grading_type[]" class="grading_type_mark_' + count + '">Mark &nbsp;<input type="radio" name="grading_type[]" class="grading_type_sgpa_' + count + '">SGPA</div><div class="col-md-4"><div class="">obtained Mark: <input type="text" value="" name="obtained_mark[]" id="obtained_mark_' + count + '"></div><br><div class="">Maximum Mark: <input type="text" value="" name="maximum_mark[]" id="maximum_mark_' + count + '"></div><br><div class="" id="percent_input">Percentage: <input type="text" readonly value="" name="percentage[]" id="percentage_' + count + '"></div></div></div>';
+      html_code += "<div><button type='button' name='remove' data-row='main-row-" + count + "' class='btn btn-danger btn-xs remove'>Delete Row</button></div><hr>";
+      html_code += "</div>";
+      $('#upload-row').append(html_code);
+    });
+  });
+  $(document).on('click', '.remove', function () {
+    var delete_row = $(this).data("row");
+    $('#' + delete_row).remove();
+  });
+
+  // add row for file uploading
+    $(document).on('click','#upload_add', function () {
+      count = count + 1;
+      var html_code = '<div class="row" id="upload_row_'+count+'"><div class="col"><input type="text" class="form-control" name="file_name[]" id="file_name_'+count+'" placeholder="file name"></div><div class="col"><input type="file" class="form-control" id="file_'+count+'" name="file[]"></div>';
+      html_code += "<button type='button' name='remove' data-row='upload_row_" + count + "' class='btn btn-danger btn-xs upload_remove'>-</button></div><hr>";
+      $('#upload-main-row').append(html_code);
+    });
+  $(document).on('click', '.upload_remove', function () {
+    var delete_row = $(this).data("row");
+    $('#' + delete_row).remove();
+  }); 
+</script>

@@ -1,0 +1,114 @@
+<%- include('../partials/header') %>
+<%- include('../partials/topnav') %>
+<div id="layoutSidenav">
+    <%- include('../partials/sidenav') %>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <div class="app-title card card-content">
+                    <div>
+                        <h1><i class="fa fa-book-open"></i> Posts > create</h1>
+                    </div>
+                    <ul class="app-breadcrumb breadcrumb">
+                        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                        <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <a href="/posts" class="waves-effect grey lighten-1 waves-light btn">Back</a>
+                        </div>
+                        <form class="col s12" method="POST" action="/posts/store">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <input value="" id="title" placeholder="title" type="text" class="validate" name="title">
+                                  <label for="title">Title</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col s12">
+                                    <div id="editorjs"></div>
+                                  <label for="desc" class="active">Description</label>
+                                  <textarea id="desc" placeholder="description" class="validate materialize-textarea" name="description" rows="2"></textarea>
+                                  
+                                </div>
+                              </div>
+                            <div class="row">
+                              <div class="input-field col s4">
+                                <input placeholder="published Date" id="published_date" type="text" class="validate published_date" name="date_published">
+                                <label for="published_date">Published Date</label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input id="from_date" name="from_date" type="text" class="validate from_date">
+                                <label for="from_date">From Date</label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input id="to_date" name="to_date" type="text" class="validate to_date">
+                                <label for="to_date">to Date</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                                <button type="submit" class="waves-effect blue darken-1 waves-light btn">Post Now</button>
+                                <button type="reset" class="waves-effect red waves-light btn">Reset</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<%- include('../partials/footer') %>
+
+<script>
+    $(document).ready(function () {
+        $('#published_date').datepicker({
+            autoClose:true,
+            format:"dd-mm-yyyy"
+        });
+        $('#from_date').datepicker({
+            autoClose:true,
+            format:"dd-mm-yyyy",
+            minDate:new Date(),
+            onSelect: function(selected) {
+                $("#to_date").datepicker({minDate: selected,format:"dd-mm-yyyy",autoClose:true})
+            }
+        });
+
+        $('#to_date').datepicker({
+            autoClose:true,
+            format:"dd-mm-yyyy",
+            minDate:new Date(),
+            onSelect: function(selected) {
+                $("#from_date").datepicker({maxDate: selected,format:"dd-mm-yyyy",autoClose:true})
+            }
+        });
+        
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4/dist/bundle.js"></script>
+<script>
+    var List = require('@editorjs/list');
+    var editor = new EditorJS({
+    /**
+     * Create a holder for the Editor and pass its ID
+     */
+    holder : 'editorjs',
+ 
+    /**
+     * Available Tools list.
+     * Pass Tool's class or Settings object for each Tool you want to use
+     */
+     tools: { 
+        header: Header, 
+        list: List 
+    }, 
+ 
+    /**
+     * Previously saved data that should be rendered
+     */
+    data: {}
+});
+</script>
